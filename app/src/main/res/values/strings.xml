@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Conversor de moneda</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="cabecera">Conversor de monedas</string>
+    <string name="action_settings">Settings</string>
+    <string name="ingrese">Ingrese el monto en Bs: </string>
+    <string name="convertir">Convertir a: </string>
+
+</resources>
