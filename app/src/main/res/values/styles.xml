@@ -20,5 +20,14 @@
         <item name="android:background">#00838F</item>
         <item name="android:textColor">#FFFFFF</item>
     </style>
+    
+    <style name="editText">
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:layout_marginLeft">48dp</item>
+        <item name="android:layout_marginRight">48dp</item>
+        <item name="android:ems">10</item>
+        <item name="android:gravity">center</item>
+    </style>
 
 </resources>
