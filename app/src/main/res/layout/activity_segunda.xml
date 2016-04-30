@@ -51,7 +51,7 @@
         android:layout_marginLeft="16dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#424242"
-        android:text="Contactos:\n   RelampaApps \n   elmac395@gmail.com"
+        android:text="Contactos:\n   RelampApps \n   elmac395@gmail.com"
         android:id="@+id/textView1"
         />
 

@@ -30,6 +30,6 @@
         android:textColor="#FFFFFF"
         android:gravity="right"
         android:layout_marginRight="48dp"
-        android:text="RelampaApps"/>
+        android:text="RelampApps"/>
 
 </LinearLayout>
