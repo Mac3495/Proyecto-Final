@@ -74,61 +74,70 @@ public class MainActivity extends ActionBarActivity {
 
     public void convertir (View view){
         String selec = spinner.getSelectedItem().toString();
+        double valMoneda = 1;
         if(selec.equals("Dolar")){
             valDolar = 1; valEuro = 0.89; valSol = 3.31; valReal = 3.55; valChile = 672.51; valColombia = 2.949; valBolivia = 6.95; valYen = 110.51;
+            valMoneda = valDolar;
         }
         if(selec.equals("Euro")){
             valDolar = 1.13; valEuro = 1; valSol = 3.73; valReal = 4.00; valChile = 757.84; valColombia = 3.323; valBolivia = 8.00; valYen = 124.53;
+            valMoneda = valEuro;
         }
         if(selec.equals("Sol")){
             valDolar = 0.30; valEuro = 0.27; valSol = 1; valReal = 1.07; valChile = 203.03; valColombia = 890.50; valBolivia = 2.14; valYen = 33.36;
+            valMoneda = valSol;
         }
         if(selec.equals("Real")){
             valDolar = 0.28; valEuro = 0.25; valSol =  0.93; valReal = 1; valChile = 189.36; valColombia = 830.54; valBolivia = 2.00; valYen = 31.12;
+            valMoneda = valReal;
         }
         if(selec.equals("Peso Chile")){
             valDolar = 0.001487; valEuro = 0.001320; valSol = 0.004925; valReal = 0.005281; valChile = 1; valColombia = 4.39; valBolivia = 0.01; valYen = 0.16;
+            valMoneda = valChile;
         }
         if(selec.equals("Peso Colombia")){
             valDolar = 0.000339; valEuro = 0.000301; valSol = 0.001123; valReal = 0.001204; valChile = 0.23; valColombia = 1; valBolivia = 0.002406; valYen = 0.04;
+            valMoneda = valColombia;
         }
         if(selec.equals("Boliviano")){
-            valDolar = 6.95; valEuro = 7.83; valSol = 2.09; valReal = 1.99; valChile = 0.01; valColombia = 0.002318; valBolivia = 1; valYen = 0.06;
+            valDolar = 0.14; valEuro = 0.12; valSol = 0.47; valReal = 0.50; valChile = 95.13; valColombia = 418.27; valBolivia = 1; valYen = 15.41;
+            valMoneda = valBolivia;
         }
         if(selec.equals("Yen")){
             valDolar = 0.009049; valEuro = 0.008030; valSol = 0.03; valReal = 0.03; valChile = 6.09; valColombia = 26.69; valBolivia = 0.06; valYen = 1;
+            valMoneda = valYen;
         }
-        calcular();
+        calcular(valMoneda);
     }
     /*
     * Este metodo convertira el monto en Bs a las diferentes monedas*/
-    public void calcular(){
+    public void calcular(double valMoneda){
         if(!monto.getText().toString().equals("")){
         double valMonto = Double.parseDouble(monto.getText().toString());
         String total = "El monto: " + monto.getText().toString() + " equivale a: \n";
         if(dolar.isChecked()){
-            total = total + "En Dolares: " + (float)(valMonto / valDolar)+"\n";
+            total = total + "En Dolares: " + (float)(valMonto * valDolar)/valMoneda+"\n";
         }
         if(euro.isChecked()){
-            total = total + "En Euros: " + (float)(valMonto / valEuro)+"\n";
+            total = total + "En Euros: " + (float)(valMonto * valEuro)/valMoneda+"\n";
         }
         if(sol.isChecked()){
-            total = total + "En Soles: " + (float)(valMonto / valSol)+"\n";
+            total = total + "En Soles: " + (float)(valMonto * valSol)/valMoneda+"\n";
         }
         if(real.isChecked()){
-            total = total + "En Reales: " + (float)(valMonto / valReal)+"\n";
+            total = total + "En Reales: " + (float)(valMonto * valReal)/valMoneda+"\n";
         }
         if(pChile.isChecked()){
-            total = total + "En pesos Chilenos: " + (float)(valMonto / valChile)+"\n";
+            total = total + "En pesos Chilenos: " + (float)(valMonto * valChile)/valMoneda+"\n";
         }
         if(pColombia.isChecked()){
-            total = total + "En pesos Colombianos: " + (float)(valMonto / valColombia)+"\n";
+            total = total + "En pesos Colombianos: " + (float)(valMonto * valColombia)/valMoneda+"\n";
         }
         if(boliviano.isChecked()){
-            total = total + "En Bolivianos: " + (float)(valMonto / valBolivia)+"\n";
+            total = total + "En Bolivianos: " + (float)(valMonto * valBolivia)/valMoneda+"\n";
         }
         if(yen.isChecked()){
-            total = total + "En Yenes: " + (float)(valMonto / valYen)+"\n";
+            total = total + "En Yenes: " + (float)(valMonto * valYen)/valMoneda+"\n";
         }
         resultado(total);
         }else{
